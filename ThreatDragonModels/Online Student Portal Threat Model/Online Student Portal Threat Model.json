@@ -894,10 +894,29 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "4671ebf9-8b9a-44f8-a1c7-a67eb5a9a32d",
+                  "title": "Credential stuffing / brute-force login",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker submits stolen or guessed credentials to impersonate a legitimate student",
+                  "mitigation": "Rate limiting and multi-factor authentication (MFA) on login",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "104ffb6a-440e-465e-a994-a103fad44820"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Login request"
@@ -912,6 +931,10 @@
               "port": "7bbdcc92-a629-43fa-9b22-0323b4cfc78f"
             },
             "vertices": [
+              {
+                "x": 240,
+                "y": 20
+              },
               {
                 "x": 220,
                 "y": 10
@@ -948,10 +971,29 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "3def2804-bf57-4998-8d63-9a8a2348afb4",
+                  "title": "Unauthorized modification of exam marks",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Missing role checks on the upload endpoint let an attacker or compromised session alter marks directly",
+                  "mitigation": "Role-based access control (RBAC) with server-side authorization checks on every write",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "104ffb6a-440e-465e-a994-a103fad44820"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Upload or modify marks"
@@ -1006,8 +1048,27 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "d5015317-49a1-4dc8-99f7-64684f088737",
+                  "title": "Plaintext exposure of student data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Unencrypted traffic between web app and database can be intercepted",
+                  "mitigation": "Enforce HTTPS/TLS end-to-end, including internal database traffic",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Database request"
@@ -1180,13 +1241,18 @@
               "cell": "cc8b02a1-68d4-4910-9858-4ec0f80d5e73",
               "port": "1fcb5f4f-b33e-49cd-8f34-d408834ee21f"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 290,
+                "y": 150
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 4
   }
 }
